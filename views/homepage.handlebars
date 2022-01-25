@@ -1,0 +1,7 @@
+{{!-- this handlebars displays all of the blog posts to the websites homepage --}}
+{{!-- if there is no seeded blog posts then you would see the error text--}}
+{{#each blogPosts as |blog|}}
+{{> blogpost-content blog }}
+{{else}}
+<h3 class="error-text">Oops, sorry we got no blog posts here.</h3>
+{{/each}}

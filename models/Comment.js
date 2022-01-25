@@ -20,11 +20,11 @@ Comment.init(
         key: 'id'
       }
     },
-    post_id: {
+    blogpost_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'post',
+        model: 'blogpost',
         key: 'id'
       }
     },
@@ -32,8 +32,7 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        // if I read this right then a comment will be valid if it is 3 characters or 32 I want comments to be able to be long but also not able to just have a comment be one word
-          len: [3, 32]
+          len: [3]
       }
     }
 },

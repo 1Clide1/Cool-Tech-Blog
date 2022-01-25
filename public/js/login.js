@@ -19,7 +19,7 @@ const loginFormHandler = async (event) => {
   }
 };
 // this is a way to add functions that I create to specific classes
-document
+  document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
 

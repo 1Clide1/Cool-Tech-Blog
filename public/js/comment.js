@@ -4,8 +4,9 @@ async function commentFormHandler(event) {
   // there is a cool trick with this that i found out is that you can select not only the textarea but the specific name of using an array not sure if I specifcally need that here but it was cool to find out
   const comment_text = document.querySelector("textarea").value.trim();
   // this right here is a way to get the id of the blogpost
-  //  the way this is done is actually throught the address bar since they all end in the id of the blogpost
+  // the way this is done is actually throught the address bar since they all end in the id of the blogpost
   // essentially just chop up the address bar until you get to the part with the id and boom you got the id of the blogpost and with that the comment will be saved to that specific blog
+  // not sure if i actually need the -1 but I am going to keep it just in case but as of what I seen both seem to work
   const blogpost_id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];

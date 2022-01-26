@@ -27,15 +27,15 @@ User.init(
       unique: true,
       validate: {
         isEmail: true,
-      },
+      }
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [6],
-      },
-    },
+        len: [4],
+      }
+    }
   },
   {
     // this hook will in theory hash the new passwords by 10 characters but also update existing passwords with a new hash

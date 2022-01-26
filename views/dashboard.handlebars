@@ -6,7 +6,7 @@
 
     {{#each blogPosts as |blog|}}
         {{> blogpost-content blog}}
-            <a href="/dashboard/edit-blogpost/{{blogPost.id}}"><button class="btn edit-post">edit post</button></a>
+            <a href="/dashboard/edit-blogpost/{{blog.id}}"><button class="btn edit-post">edit post</button></a>
     {{/each}}
 
 {{else}}

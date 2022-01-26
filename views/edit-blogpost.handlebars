@@ -1,0 +1,37 @@
+<article>
+  <a href="/dashboard" class="dashboard-link"> &larr; back to dashboard</a>
+  <h2 class="title">Edit Your Blog Post</h2><hr />
+  <form class="edit-post-form">
+    <div>
+      <label for="blog-post-title">Your Blog:</label>
+      <input
+        class="input"
+        name="blog-post-title"
+        type="text"
+        value="{{blogPost.title}}"
+      />
+    </div>
+    <div>
+      <label for="blog-content">Your Blog's Content</label>
+      <input
+        class="textarea"
+        name="post-content"
+        type="text"
+        value="{{blogPost.blog_content}}"
+      />
+    </div>
+    <div class="created-by-container">
+      <p>Created By You On {{format_date blogPost.created_at}}|</p>
+      <a href="/blogpost/{{blogPost.id}}">{{blogPost.comments.length}}
+        {{format_plural "comment" blogPost.comments.length}}</a>
+    </div>
+    <button type="submit" class="btn save">Save Your Blog</button>
+    <button type="button" class="btn delete">Delete Your Blog</button>
+  </form>
+</article>
+{{! not sure if I want the user to see all of the comments when editing the post }}
+{{!-- {{> comments blogPost.comments}} --}}
+{{! this is what the javascript files are going to look like they just haven't been added yet }}
+{{! <script src="/js/edit-blog.js"></script>
+<script src="/js/delete-blog.js"></script>
+<script src="/js/comment.js"></script> }}

@@ -1,0 +1,22 @@
+<!-- this is a partial displaying the blog posts -->
+{{> blogpost-content blogpost}}
+
+{{!-- this is where you will be able to see the comments section if you are logged in --}}
+{{#if loggedIn}}
+<form class="comment-form">
+  <div>
+    <textarea class="comment-body" name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button class="btn add-comment" type="submit">add your comment</button>
+  </div>
+  
+</form>
+{{/if}}
+{{!-- these are where the comments for this blogpost would be displayed --}}
+{{> comments blogpost.comments}}
+
+{{#if loggedIn}}
+<script src="/js/comment.js"></script>
+{{/if}}

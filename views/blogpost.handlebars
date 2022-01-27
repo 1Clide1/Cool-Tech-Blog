@@ -1,5 +1,8 @@
 <!-- this is a partial displaying the blog posts -->
-{{> blogpost-content blogpost}}
+{{!-- just realized why this didn't work and that is because I didn't use the right home route --}}
+{{!-- my confusion with this is because at first I set an alias in the homepage and I thought I could use the same alias but then after looking at not only the home routes I made
+but also the address bar I saw that I needed to use the route/var that looked at the ids of the blogpost since I am looking at a specific one --}}
+{{> blogpost-content blogPost}}
 
 {{!-- this is where you will be able to see the comments section if you are logged in --}}
 {{#if loggedIn}}
@@ -15,7 +18,7 @@
 </form>
 {{/if}}
 {{!-- these are where the comments for this blogpost would be displayed --}}
-{{> comments blogpost.comments}}
+{{> comments blogPost.comments}}
 
 {{#if loggedIn}}
 <script src="/js/comment.js"></script>

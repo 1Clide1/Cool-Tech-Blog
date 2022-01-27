@@ -1,7 +1,8 @@
 {{!-- this handlebars displays all of the blog posts to the websites homepage --}}
 {{!-- if there is no seeded blog posts then you would see the error text--}}
-{{#each blogPosts as |blog|}}
-{{> blogpost-content blog }}
+{{!-- I tested it and I actually don't need to set an alias I can just use the home route variable that I made to get the data --}}
+{{#each blogPosts}}
+{{> blogpost-content}}
 {{else}}
 <h3 class="error-text">Oops, sorry we got no blog posts here.</h3>
 {{/each}}

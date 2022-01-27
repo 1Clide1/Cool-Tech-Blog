@@ -19,10 +19,6 @@ router.get("/", (req, res) => {
           "user_id",
           "created_at",
         ],
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
       },
       {
         model: User,

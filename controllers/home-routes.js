@@ -3,8 +3,6 @@ const sequelize = require("../config/connection");
 const { BlogPost, User, Comment } = require("../models");
 
 router.get("/", (req, res) => {
-  console.log(req.session);
-
   BlogPost.findAll({
     attributes: ["id", "title", "created_at", "blog_content"],
     include: [

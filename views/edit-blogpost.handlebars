@@ -5,8 +5,8 @@
     <div>
       <label for="blog-blog-post-title">Your Blog:</label>
       <input
-        class="input"
-        name="blog-post-title"
+        class="blog-title"
+        name="blog-title"
         type="text"
         value="{{blogPost.title}}"
       />
@@ -14,8 +14,8 @@
     <div>
       <label for="blog-content">Your Blog's Content</label>
       <input
-        class="textarea"
-        name="post-content"
+        class="blog-body"
+        name="blog-content"
         type="text"
         value="{{blogPost.blog_content}}"
       />
@@ -30,8 +30,12 @@
   </form>
 </article>
 {{! not sure if I want the user to see all of the comments when editing the post }}
-{{!-- {{> comments blogPost.comments}} --}}
-{{! this is what the javascript files are going to look like they just haven't been added yet }}
-{{! <script src="/js/edit-blog.js"></script>
-<script src="/js/delete-blog.js"></script>
-<script src="/js/comment.js"></script> }}
+{{> comments blogPost.comments}}
+<div>
+  <button class="btn delete-comment">Nuke Comments</button>
+ </div>
+{{! these are the scripts }}
+ 
+<script src="/js/delete-comments.js"></script>
+<script src="/js/edit-blogpost.js"></script>
+<script src="/js/delete-blogpost.js"></script>

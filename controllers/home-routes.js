@@ -17,10 +17,6 @@ router.get("/", (req, res) => {
           "user_id",
           "created_at",
         ],
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
       },
       {
         model: User,
@@ -28,8 +24,9 @@ router.get("/", (req, res) => {
       },
     ],
   })
-    .then((dbPostData) => {
-      const blogPosts = dbPostData.map((post) => post.get({ plain: true }));
+    // using dbData as a universal since I am using multiple models
+    .then((dbData) => {
+      const blogPosts = dbData.map((blogPost) => blogPost.get({ plain: true }));
       res.render("homepage", {
         blogPosts,
         loggedIn: req.session.loggedIn,
@@ -42,6 +39,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
+  // this means if you are already logged in then you will be directed back to the home page
   if (req.session.loggedIn) {
     res.redirect("/");
     return;

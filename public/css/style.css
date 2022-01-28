@@ -190,7 +190,7 @@ input {
 }
 /* for my footer */
 footer {
-  position: fixed;
+  position: absolute;
   display: block;
   bottom: 0;
   width: 100%;
@@ -201,7 +201,7 @@ footer {
 /* for mobile accesibility */
 @media screen and (max-width: 330px) {
   footer {
-    margin-bottom: -1.8rem;
+    margin-bottom: -3rem;
     font-size: 1.1rem;
   }
   .blog-body,

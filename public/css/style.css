@@ -189,6 +189,7 @@ input {
 footer {
   margin-top: auto;
   text-align: center;
+  font-size: 1.3rem;
 }
 /* for mobile accesibility */
 @media screen and (max-width: 330px) {

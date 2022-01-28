@@ -65,6 +65,7 @@ a {
   padding: 1rem;
   margin: 0.5rem;
 }
+/* for the input tag  */
 input {
   display: flex;
   flex-direction: column;
@@ -143,6 +144,7 @@ input {
 .delete-blog {
   width: 8rem;
 }
+/* blog body and title are universal to the edit and create blog pages */
 .blog-body,
 .blog-title {
   width: 40rem;
@@ -195,4 +197,15 @@ footer {
   height: 3rem;
   margin-bottom: -1rem;
   text-align: center;
+}
+/* for mobile accesibility */
+@media screen and (max-width: 330px) {
+  footer {
+    margin-bottom: -1.8rem;
+    font-size: 1.1rem;
+  }
+  .blog-body,
+  .blog-title {
+    width: 20rem;
+  }
 }

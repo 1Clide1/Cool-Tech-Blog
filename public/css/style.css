@@ -1,3 +1,6 @@
+html {
+  height: 100%;
+}
 /* standard upkeeping for the site */
 * {
   margin: 0;
@@ -30,6 +33,9 @@ header {
 body {
   background-color: var(--bg);
   color: var(--secondary);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 /* for the links */
 a {
@@ -52,9 +58,7 @@ a {
 }
 /* this is for my login form */
 .login-container {
-  display: flex;
   justify-content: flex-start;
-  flex-direction: column;
 }
 .login-title {
   color: var(--text-color);
@@ -67,8 +71,6 @@ a {
 }
 /* for the input tag  */
 input {
-  display: flex;
-  flex-direction: column;
   padding: 0.5rem;
   border-radius: 0.2rem;
 }
@@ -79,9 +81,8 @@ input {
 }
 /* this is for the signup */
 .signup-container {
-  display: flex;
+  /* just in case because i want it to stay at this position */
   justify-content: flex-start;
-  flex-direction: column;
 }
 .signup-title {
   color: var(--text-color);
@@ -136,10 +137,6 @@ input {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
-.edit-blog-post-form {
-  display: flex;
-  flex-direction: column;
-}
 .save,
 .delete-blog {
   width: 8rem;
@@ -190,20 +187,11 @@ input {
 }
 /* for my footer */
 footer {
-  position: absolute;
-  display: block;
-  bottom: 0;
-  width: 100%;
-  height: 3rem;
-  margin-bottom: -1rem;
+  margin-top: auto;
   text-align: center;
 }
 /* for mobile accesibility */
 @media screen and (max-width: 330px) {
-  footer {
-    margin-bottom: -3rem;
-    font-size: 1.1rem;
-  }
   .blog-body,
   .blog-title {
     width: 20rem;

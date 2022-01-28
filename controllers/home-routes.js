@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { BlogPost, User, Comment } = require("../models");
+const withAuth = require("../utils/auth");
 
 router.get("/", (req, res) => {
   BlogPost.findAll({
@@ -55,7 +56,7 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/blogpost/:id", (req, res) => {
+router.get("/blogpost/:id", withAuth, (req, res) => {
   BlogPost.findOne({
     where: {
       id: req.params.id,

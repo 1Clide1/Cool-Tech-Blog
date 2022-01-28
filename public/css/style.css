@@ -115,6 +115,11 @@ input {
 .dashboard-link {
   font-size: 1.5rem;
 }
+/* dashboard page */
+.dashboard-title {
+  color: var(--text-color);
+  font-size: 2rem;
+}
 /* edit-blog/create blog page */
 .title {
   color: var(--text-color);
@@ -141,6 +146,16 @@ input {
 .blog-body,
 .blog-title {
   width: 40rem;
+}
+/* create blog post page */
+.blog-post-title,
+.blog-post-content {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.create-blog {
+  padding: 0.7rem;
 }
 /* for the comment section */
 .comment-section {

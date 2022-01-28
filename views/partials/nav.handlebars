@@ -1,9 +1,9 @@
 <nav>
   {{! need to leave this button outside of the else statement that way it will function properly througout all pages }}
-  <button><a href="/">Home</a></button>
+  <button class="btn home"><a href="/">Home</a></button>
   {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    <button><a href="/dashboard">Dashboard</a></button>
+    <button id="logout" class="btn logout">Logout</button>
+    <button class="btn dashboard"><a href="/dashboard">Dashboard</a></button>
   {{else}}
     <a href="/login">Login</a>
   {{/if}}

@@ -10,8 +10,10 @@
   --bg: #0d0208;
   --secondary: #21962f;
   --tertiary: #003b00;
+  --hover: #062006;
   --text-color: #13ff4e;
   --error-text: rgb(228, 46, 1);
+  --nuke-comment: rgb(65, 49, 6);
 }
 /* headers */
 header {
@@ -22,6 +24,7 @@ header {
   display: flex;
   justify-content: flex-start;
   color: var(--text-color);
+  margin-bottom: 1rem;
 }
 /* body */
 body {
@@ -41,6 +44,112 @@ a {
   justify-content: space-between;
   font-size: 1em;
   padding: 0.3em;
+  margin-bottom: 0.2rem;
+}
+.btn:hover {
+  background-color: var(--hover);
+  cursor: pointer;
+}
+/* this is for my login form */
+.login-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.login-title {
+  color: var(--text-color);
+  padding: 1rem;
+  text-decoration: none;
+}
+.login-form {
+  padding: 1rem;
+  margin: 0.5rem;
+}
+input {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+.email-login,
+.password-login,
+.sign-up-text {
+  color: var(--text-color);
+}
+/* this is for the signup */
+.signup-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.signup-title {
+  color: var(--text-color);
+  padding: 1rem;
+  text-decoration: none;
+}
+.signup-form {
+  padding: 1rem;
+  margin: 0.5rem;
+}
+.username,
+.signup-email,
+.signup-password,
+.login-text {
+  color: var(--text-color);
+}
+/* for my blog content */
+.blog-title {
+  font-size: 2rem;
+}
+.blog-container {
+  margin-bottom: 1rem;
+}
+.blog-card-info {
+  font-size: 1rem;
+}
+.blog-card-user-info-container {
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+/* blog dashboard link*/
+.dashboard-link {
+  font-size: 1.5rem;
+}
+/* edit-blog/create blog page */
+.title {
+  color: var(--text-color);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+/* for edit blog page */
+.blog-post-title,
+.blog-content,
+.created-by-container {
+  color: var(--text-color);
+}
+/* for the comment section */
+.comment-section {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+.posted-detail {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+.comment-container {
+  margin-bottom: 1rem;
+}
+.comment-body {
+  padding: 1rem;
+  border-radius: 0.2rem;
+}
+.delete-comment {
+  padding: 1rem;
+}
+.delete-comment:hover {
+  color: var(--error-text);
+  background-color: var(--nuke-comment);
 }
 /* this is the text that you would see if there is no post */
 .error-text {

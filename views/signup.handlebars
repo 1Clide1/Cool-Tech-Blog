@@ -1,9 +1,9 @@
 <section>
   <h2 class="signup-title">SIGN-UP</h2><hr />
-  <div>
+  <div class="signup-container">
     <form class="signup-form">
       <div>
-        <label for="username">Username:</label>
+        <label class="username" for="username">Username:</label>
         <input
           type="text"
           name="username"
@@ -12,7 +12,7 @@
         />
       </div>
       <div>
-        <label for="signUp-email">Email:</label>
+        <label class="signup-email" for="signup-email">Email:</label>
         <input
           type="email"
           name="signup-email"
@@ -21,7 +21,7 @@
         />
       </div>
       <div>
-        <label for="signup-password">Password:</label>
+        <label class="signup-password" for="signup-password">Password:</label>
         <input
           type="password"
           name="signup-password"
@@ -30,12 +30,12 @@
         />
       </div>
       <div>
-        <button type="submit" id="signUp-button">Sign-Up</button>
+        <button type="submit" class="btn signup">Sign-Up</button>
       </div>
       <div>
-        <p>If you have already created an account with us, then you can Login
-          here:</p>
-        <button><a class="login-btn" href="/login">Login</a></button>
+        <p class="login-text">If you have already created an account with us,
+          then you can Login here:</p>
+        <button class="btn login"><a href="/login">Login</a></button>
       </div>
     </form>
   </div>

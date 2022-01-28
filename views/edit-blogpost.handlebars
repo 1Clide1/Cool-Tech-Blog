@@ -3,7 +3,7 @@
   <h2 class="title">Edit Your Blog Post</h2><hr />
   <form class="edit-blog-post-form">
     <div>
-      <label for="blog-blog-post-title">Your Blog:</label>
+      <label class="blog-post-title" for="blog-post-title">Your Blog:</label>
       <input
         class="blog-title"
         name="blog-title"
@@ -12,7 +12,7 @@
       />
     </div>
     <div>
-      <label for="blog-content">Your Blog's Content</label>
+      <label class="blog-content" for="blog-content">Your Blog's Content</label>
       <input
         class="blog-body"
         name="blog-content"
@@ -21,7 +21,7 @@
       />
     </div>
     <div class="created-by-container">
-      <p>Created By You On {{format_date blogPost.created_at}}|</p>
+      <p>Created By You On: {{format_date blogPost.created_at}} | </p>
       <a href="/blogpost/{{blogPost.id}}">{{blogPost.comments.length}}
         {{format_plural "comment" blogPost.comments.length}}</a>
     </div>

@@ -127,6 +127,20 @@ input {
 .blog-content,
 .created-by-container {
   color: var(--text-color);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.edit-blog-post-form {
+  display: flex;
+  flex-direction: column;
+}
+.save,
+.delete-blog {
+  width: 8rem;
+}
+.blog-body,
+.blog-title {
+  width: 40rem;
 }
 /* for the comment section */
 .comment-section {
@@ -159,9 +173,11 @@ input {
 }
 /* for my footer */
 footer {
-  position: absolute;
+  position: fixed;
+  display: block;
   bottom: 0;
   width: 100%;
   height: 3rem;
+  margin-bottom: -1rem;
   text-align: center;
 }

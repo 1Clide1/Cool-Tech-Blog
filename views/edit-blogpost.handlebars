@@ -21,7 +21,7 @@
       />
     </div>
     <div class="created-by-container">
-      <p>Created By You On: {{format_date blogPost.created_at}} | </p>
+      <p>Created By You On: {{format_date blogPost.created_at}}</p>
       <a href="/blogpost/{{blogPost.id}}">{{blogPost.comments.length}}
         {{format_plural "comment" blogPost.comments.length}}</a>
     </div>
@@ -29,7 +29,7 @@
     <button type="button" class="btn delete-blog">Delete Your Blog</button>
   </form>
 </article>
-{{! not sure if I want the user to see all of the comments when editing the post }}
+{{!-- these are where the comments are displayed --}}
 {{> comments blogPost.comments}}
 <div>
   <button class="btn delete-comment">Nuke Comments</button>

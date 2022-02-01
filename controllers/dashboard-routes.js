@@ -1,6 +1,5 @@
 // importing the needed dependencies
 const router = require("express").Router();
-const sequelize = require("../config/connection");
 const { BlogPost, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
@@ -22,10 +21,6 @@ router.get("/", withAuth, (req, res) => {
           "user_id",
           "created_at",
         ],
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
       },
       {
         model: User,
@@ -33,10 +28,13 @@ router.get("/", withAuth, (req, res) => {
       },
     ],
   })
-    .then((dbBlogPostData) => {
+    // using more than one of the models so I am saying with this var my data is coming from the db
+    .then((dbData) => {
       // makes the data useable that way I can display it properly on the website
-      const blogPosts = dbBlogPostData.map((blogPost) =>
-        blogPost.get({ plain: true })
+      // felt like I should probably keep this consistent and call the vars im mapping out the same as the
+      // const that way it makes sense readibility wise
+      const blogPosts = dbData.map((blogPosts) =>
+        blogPosts.get({ plain: true })
       );
       res.render("dashboard", { blogPosts, loggedIn: true });
     })
@@ -62,19 +60,17 @@ router.get("/edit-blogpost/:id", withAuth, (req, res) => {
           "user_id",
           "created_at",
         ],
+        // need this for comments that way the username will show up
         include: {
           model: User,
           attributes: ["username"],
         },
       },
-      {
-        model: User,
-        attributes: ["username"],
-      },
     ],
   })
-    .then((dbBlogPostData) => {
-      if (!dbBlogPostData) {
+    // same as above I am keeping this more generic that way you can see i am getting the data from the db
+    .then((dbData) => {
+      if (!dbData) {
         res
           .status(404)
           .json({ message: "No blog post was found with this id" });
@@ -82,7 +78,7 @@ router.get("/edit-blogpost/:id", withAuth, (req, res) => {
       }
 
       // same concept as above making the data useable that way I can display it on the website
-      const blogPost = dbBlogPostData.get({ plain: true });
+      const blogPost = dbData.get({ plain: true });
 
       res.render("edit-blogpost", {
         blogPost,
@@ -111,21 +107,12 @@ router.get("/create-blogpost/", withAuth, (req, res) => {
           "user_id",
           "created_at",
         ],
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
-      },
-      {
-        model: User,
-        attributes: ["username"],
       },
     ],
   })
-    .then((dbBlogPostData) => {
-      const blogPosts = dbBlogPostData.map((blogPost) =>
-        blogPost.get({ plain: true })
-      );
+    // again keeping this more generic since I am using more than one model
+    .then((dbData) => {
+      const blogPosts = dbData.map((blogPost) => blogPost.get({ plain: true }));
       res.render("create-blogpost", { blogPosts, loggedIn: true });
     })
     .catch((err) => {

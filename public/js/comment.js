@@ -26,7 +26,9 @@ async function commentFormHandler(event) {
     if (response.ok) {
       document.location.reload();
     } else {
-      alert(response.statusText);
+      alert(
+        "Your comment might be a little too long for this site try shortening it :). Max characters for a comment is 32"
+      );
     }
   }
 }

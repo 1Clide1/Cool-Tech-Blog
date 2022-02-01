@@ -32,6 +32,8 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
+        // this basically makes the comments short basically only allows 32 characters max might be too short for real life but for this setting it is perfect for me
+        // because I just want the comments to be short in nature
         len: [3, 32],
       },
     },

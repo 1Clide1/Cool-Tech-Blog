@@ -1,7 +1,6 @@
 // import what I need
 const router = require("express").Router();
 const { BlogPost, User, Comment } = require("../../models");
-const sequelize = require("../../config/connection");
 const withAuth = require("../../utils/auth");
 // get everything that is associated with the blog post
 router.get("/", (req, res) => {

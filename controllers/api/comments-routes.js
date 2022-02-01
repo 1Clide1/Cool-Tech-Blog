@@ -1,8 +1,6 @@
 // import the needed dependencies
 const router = require("express").Router();
 const { Comment } = require("../../models");
-// honestly not sure I need this for the routes but I am including just incase
-const sequelize = require("../../config/connection");
 const withAuth = require("../../utils/auth");
 // this is where you get all of the comments
 router.get("/", (req, res) => {

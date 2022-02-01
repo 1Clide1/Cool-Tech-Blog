@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const sequelize = require("../config/connection");
 const { BlogPost, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
@@ -72,11 +71,13 @@ router.get("/blogpost/:id", withAuth, (req, res) => {
           "user_id",
           "created_at",
         ],
+        // this is for the comments and show's what user posted that comment
         include: {
           model: User,
           attributes: ["username"],
         },
       },
+      // this is for the username to show who exactly posted this content
       {
         model: User,
         attributes: ["username"],

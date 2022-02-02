@@ -148,6 +148,12 @@ input {
 .blog-body,
 .blog-title {
   width: 40rem;
+  padding: 2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+.blog-body {
+  height: 6.3rem;
 }
 /* create blog post page */
 .blog-post-title,

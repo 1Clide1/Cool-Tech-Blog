@@ -14,7 +14,7 @@
 
 ## Screenshot
 
-![Site screenshot](images/mysite.png?raw=true "Optional Title")
+![Site screenshot](images/mysite.png?raw=true "Cool Tech Blog")
 
 ## Link-To-My-Website
 
